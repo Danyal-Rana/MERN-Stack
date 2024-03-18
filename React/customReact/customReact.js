@@ -31,3 +31,5 @@ const reactElement = {
 const mainContainer = document.getElementById("root");
 
 customRender (reactElement, mainContainer);
+
+// here, we are rendering an object, while in react, only functions are rendered 
