@@ -7,7 +7,7 @@ function App() {
 
   // let counter = 15;
 
-  let [counter, setCounter] = useState(15);
+  let [counter, setCounter] = useState(5);
 
   const addValue = () => {
     console.log ("Value Added", counter);
