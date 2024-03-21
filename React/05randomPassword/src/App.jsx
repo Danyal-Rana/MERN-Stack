@@ -11,7 +11,7 @@ function App() {
     let pass = "";
     let myCharSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-    if (!numberAllowed) {
+    if (numberAllowed) {
       myCharSet += "0123456789";
     }
     if (charAllowed) {
@@ -93,7 +93,7 @@ function App() {
               defaultChecked={charAllowed} 
               id='sCharInput' 
               onChange={() => {
-              setNumberAllowed((prev) => !prev);
+              setCharAllowed((prev) => !prev);
               }} />
               <label htmlFor="sCharInput">Special Chars</label>
           </div>
