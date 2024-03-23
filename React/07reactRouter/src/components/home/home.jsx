@@ -1,6 +1,4 @@
 import React from 'react';
-import 
-
 export default function Home() {
     return (
         <div className="mx-auto w-full max-w-7xl">
