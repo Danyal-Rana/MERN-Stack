@@ -1,5 +1,4 @@
-import { useContext, useState } from "react";
-import React, {userState} from "react";
+import React, {userState, useContext} from "react";
 import UserContext from "../context/UserContext";
 
 function Login () {
@@ -28,7 +27,7 @@ function Login () {
         placeholder='password'  />
         <button onClick={handleSubmit}>Submit</button>
     </div>
-    );
+    )
 }
 
 export default Login;
