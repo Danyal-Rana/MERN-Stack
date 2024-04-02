@@ -3,7 +3,7 @@ import UserContext from "../context/UserContext";
 
 function Login () {
 
-    const [username, setusernam] = useState('');
+    const [username, setusername] = useState('');
     const [password, setPassword] = useState('');
 
     const [setUser] = useContext(UserContext);
