@@ -12,3 +12,5 @@ fs.readFile('demo.txt', 'utf-8', (err, x)=> {
 })
 
 console.log (2+3); // this will be printed before readFile
+
+console.log ("Danyal"); // adding 'nodemon start' in script of package.json will keep giving outputs on every change in index.js
