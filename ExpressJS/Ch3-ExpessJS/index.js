@@ -8,7 +8,31 @@ const express = require('express');
 const server = express(); // server has been started
 
 // here goes the code
-server.get('/demo', (req, res)=> {
+
+// body parser
+server.use(express.json());
+server.use(express.static('public'));
+
+// middleware
+server.use( (req, res, next) => {
+    console.log (req.method, req.ip, req.hostname, req.get('User-Agenet'));
+    next();
+} )
+
+const auth = (req, res, next) => {
+    if (req.query.password === '505') {
+        next();
+    } else {
+        res.sendStatus(401);
+    }
+}
+
+// server.use(auth);
+
+
+
+
+server.get('/demo',  (req, res)=> {
     res.sendStatus(201).send("Hello Express !");
     // res.sendFile('index.html', { root: 'R:/MERN-Stack/ExpressJS/Ch3-ExpessJS' });
     // res.json(products);
@@ -19,7 +43,7 @@ server.get('/demo', (req, res)=> {
 server.get('/', (req, res) => {
     res.json({type:'GET'});
 })
-server.post('/', (req, res) => {
+server.post('/', auth, (req, res) => {
     res.json({type:'POST'});
 })
 server.put('/', (req, res) => {
