@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 //     res.send('Server is ready');
 // });
 
-app.get('/jokes', (req, res) => {
+app.get('/api/jokes', (req, res) => {
     const jokes = [
         {
             id: 1,
