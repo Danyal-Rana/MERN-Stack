@@ -45,7 +45,7 @@ const userSchema = new Schema ({
         type: String,
     },
     
-}, {timestamps: ture});
+}, {timestamps: true});
 
 // arrow function does not have its own this, but in this case we need the this reference, that's why classical arrow function is not recommended here
 userSchema.pre("save", async function(next) {
@@ -89,4 +89,4 @@ userSchema.methods.generateRefreshToken = function() {
     });
 };
 
-export const user = mongoose.model("User", userSchema);
+export const User = mongoose.model("User", userSchema);
