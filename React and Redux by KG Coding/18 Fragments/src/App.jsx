@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import FoodItems from './components/FoodItems'
 import ErrorMessage from './components/ErrorMessage'
 import Container from './components/Container'
+import FoodInput from './components/FoodInput'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Container>
         <h1 className={styles.foodHeading}>Healthy Food</h1>
         <ErrorMessage myFoodItems={foodItems}></ErrorMessage>
+        <FoodInput></FoodInput>
         <FoodItems myFoodItems={foodItems}></FoodItems>
       </Container>
 
