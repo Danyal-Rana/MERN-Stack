@@ -7,7 +7,7 @@ const FoodItems = ({myFoodItems}) => {
             <ul className="list-group">
                 {
                     myFoodItems.map((item, index) => (
-                        <Item key={index} myFoodItem={item}></Item>                        
+                        <Item key={index} myFoodItem={item}></Item>
                     ))
                 }
             </ul>
