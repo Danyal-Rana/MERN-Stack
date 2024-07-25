@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './App.module.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 import FoodItems from './components/FoodItems'
@@ -10,8 +10,11 @@ function App() {
 
   let foodItems = ['dal', 'veg', 'roti', 'salad', 'milk'];
 
+  const [textToShow, useTextState] = useState("Food item entered by user is: ");
+
   const handleOnChange = (event) => {
     console.log(event.target.value);
+    useTextState(event.target.value);
   }
 
   return (
@@ -20,6 +23,7 @@ function App() {
         <h1 className={styles.foodHeading}>Healthy Food</h1>
         <ErrorMessage myFoodItems={foodItems}></ErrorMessage>
         <FoodInput handleOnChange={handleOnChange}></FoodInput>
+        <p>{textToShow}</p>
         <FoodItems myFoodItems={foodItems}></FoodItems>
       </Container>
 
